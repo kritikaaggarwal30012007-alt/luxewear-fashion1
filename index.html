@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Meta Tags -->
+  <title>LuxeWear Fashion | Quiet Luxury & Minimalist Couture Store</title>
+  <meta name="description" content="Shop LuxeWear Fashion - a modern, premium wardrobe atelier for men and women. Discover luxury silk slip dresses, Mongolian cashmere cardigans, Irish linen shirts, and Kojima denim. Complimentary global shipping.">
+  <meta name="keywords" content="luxury fashion, quiet luxury, minimalist couture, silk dress, cashmere sweater, linen shirt, selvage denim, Zara style, Mango style, designer clothes">
+  <meta name="author" content="LuxeWear Architecture">
+  
+  <!-- OpenGraph Tags for Social Sharing -->
+  <meta property="og:title" content="LuxeWear Fashion | Quiet Luxury Store">
+  <meta property="og:description" content="Explore architectural minimalism and premium textile designs. Sourced from organic silk and heritage cashmeres.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=800">
+  
+  <!-- JSON-LD Structured Schema Markup for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OnlineStore",
+    "name": "LuxeWear Fashion",
+    "description": "Minimalist luxury eCommerce clothing atelier.",
+    "url": "https://www.luxewearfashion.com",
+    "telephone": "+1800LUXEWEAR",
+    "priceRange": "$$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "50 Avenue Montaigne",
+      "addressLocality": "Paris",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary Worldwide Shipping on Orders Over $300 • 10% Off First Purchase Code: <span style="color:var(--color-gold); font-weight:600;">LUXESTART10</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <!-- Mobile hamburger -->
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+
+      <!-- Logo -->
+      <a href="#home" class="brand-logo">LuxeWear<span>.</span></a>
+
+      <!-- Navigation links -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#shop" class="nav-link">Shop</a></li>
+          <li><a href="#shop?category=Men" class="nav-link">Men</a></li>
+          <li><a href="#shop?category=Women" class="nav-link">Women</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#about" class="nav-link">Our Narrative</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right menu actions -->
+      <div class="nav-actions">
+        <!-- Currency dropdown -->
+        <select id="currency-select" class="selector-dropdown" title="Currency Selector">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+
+        <!-- Language dropdown -->
+        <select id="language-select" class="selector-dropdown" title="Language Selector">
+          <option value="EN">EN</option>
+          <option value="FR">FR</option>
+          <option value="IT">IT</option>
+        </select>
+
+        <!-- Theme toggler -->
+        <button class="nav-icon-btn" id="theme-toggle" title="Toggle Theme" style="font-size: 18px;">☾</button>
+
+        <!-- Wishlist -->
+        <a href="#dashboard" class="nav-icon-btn" title="View Wishlist" onclick="switchDbTab('wish')">
+          ♥
+          <span class="badge" id="wishlist-count">0</span>
+        </a>
+
+        <!-- Cart drawer trigger -->
+        <button class="nav-icon-btn" id="cart-btn" title="Open Cart">
+          👜
+          <span class="badge" id="cart-count">0</span>
+        </button>
+
+        <!-- Dashboard Profile link -->
+        <a href="#dashboard" class="nav-icon-btn" title="User Dashboard" style="font-size:18px;">👤</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SPA Application Mounting Point -->
+  <main id="app-main" class="page-container">
+    <!-- Dynamic page files are injected here by app.js -->
+  </main>
+
+  <!-- Slide-out Basket Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Your Atelier Bag</h3>
+      <button class="cart-drawer-close" id="cart-close">×</button>
+    </div>
+    
+    <!-- Dynamic Cart item stack -->
+    <div class="cart-drawer-items" id="cart-items-list">
+      <!-- Injected by app.js -->
+    </div>
+    
+    <!-- Cart Summary & Checkout triggers -->
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span>Cart Subtotal</span>
+        <span id="cart-subtotal">$0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Eco-Box Packaging</span>
+        <span id="cart-shipping">Complimentary</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Subtotal</span>
+        <span id="cart-total">$0</span>
+      </div>
+      <button class="btn-luxe-gold" id="checkout-btn" style="width: 100%; margin-top: 15px; border-radius: 0;">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Live Chat Widget -->
+  <div class="chat-widget">
+    <div class="chat-bubble" id="chat-bubble" title="Concierge Chat Support">💬</div>
+    
+    <div class="chat-panel" id="chat-panel">
+      <div class="chat-header">
+        <h4 class="chat-title">LuxeWear Concierge Desk</h4>
+        <button id="chat-close" style="background:none; border:none; color:white; font-size:18px; cursor:pointer;">×</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-msg bot">
+          Welcome to LuxeWear Fashion. I am your automated shopping assistant. How can I help you find cashmere sweaters, size tables, or ship tracking information today?
+        </div>
+      </div>
+      <form class="chat-footer" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Type concern..." class="chat-input" required autocomplete="off">
+        <button type="submit" class="newsletter-btn" style="padding: 0 15px;">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3 class="brand-logo" style="color:var(--color-white); font-size:20px; margin-bottom:20px;">LuxeWear<span>.</span></h3>
+        <p style="font-size:12px; color:#888; line-height:1.6; margin-bottom:20px;">Premium wardrobe pillars meticulously engineered from traceably sourced mulberry silks, Mongolian cashmere knits, and organic linens.</p>
+        <span style="font-size:12px; color:var(--color-gold);">Est. 2012 • Paris</span>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#shop?category=Women" class="footer-link">Women's Collection</a></li>
+          <li><a href="#shop?category=Men" class="footer-link">Men's Collection</a></li>
+          <li><a href="#shop" class="footer-link">New Seasonal Arrivals</a></li>
+          <li><a href="#shop" class="footer-link">Trending Pieces</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Client Concierge</h4>
+        <ul class="footer-links">
+          <li><a href="#about" class="footer-link">Our Heritage</a></li>
+          <li><a href="#contact" class="footer-link">Contact Support Desk</a></li>
+          <li><a href="#dashboard" class="footer-link">My Account Info</a></li>
+          <li><a href="#blog" class="footer-link">Style Journals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Luxury Newsletter</h4>
+        <p style="font-size:12px; color:#888; line-height:1.6;">Register for LuxeWear letters to receive early launches, editorial lookbooks, and 10% off your initial couture checkout.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to LuxeWear lookbooks.'); this.reset();">
+          <input type="email" placeholder="Input email address..." class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>© 2026 LuxeWear Fashion Ltd. All rights reserved.</span>
+      <div style="display:flex; gap:20px;">
+        <a href="#about" class="footer-link">Privacy Policy</a>
+        <a href="#about" class="footer-link">Terms & Conditions</a>
+        <a href="#about" class="footer-link">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
